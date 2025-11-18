@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos y Condiciones | Fuzzion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* CONTENEDOR CON IMAGEN DE FONDO */
+    .background-container {
+      position: relative;
+      min-height: 100vh;
+      background: url('images/banner.jpg') no-repeat center center/cover;
+      z-index: 0;
+    }
+
+    /* Sombra oscura sobre la imagen */
+    .background-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3); /* 🔥 Opacidad 30% */
+      z-index: -1;
+    }
+
+    /* NAVBAR */
+    nav {
+      background-color: #f6a06c;
+      padding: 1rem 2rem;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffd54f;
+    }
+
+    /* BOTÓN HAMBURGUESA */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 3px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background: #f6a06c;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 1rem 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(255, 177, 124, 0.9);
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .accordion {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      padding: 18px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.1em;
+      background: #f6a06c;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .accordion-header:hover {
+      background: #f6a06c;
+      color: #000000;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      background: #fff;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .accordion-content.open {
+      max-height: 300px;
+      padding: 20px;
+    }
+
+    .btn-volver {
+      display: block;
+      margin: 40px auto 0;
+      padding: 14px 28px;
+      background-color: #f8bbd0;
+      color: #4a148c;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      width: fit-content;
+      transition: 0.3s;
+    }
+
+    .btn-volver:hover {
+      background-color: #f48fb1;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f6a06c;
+      color: #fff;
+      margin-top: 50px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    footer a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-container">
+    <!-- NAVBAR -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="images/logo.png" alt="Fuzzion Logo">
+        </div>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="login.php">Registro</a>
+          <a href="comprar.php">Compra</a>
+          <a href="sobrenosotros.html">Sobre nosotros</a>
+          <a href="terminos_y_condiciones.html">Términos y condiciones</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+      <h1>Términos y Condiciones</h1>
+      <p>Lee detenidamente cada sección antes de usar nuestros servicios.</p>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+      <div class="accordion">
+        <div class="accordion-header">1. Uso del Sitio</div>
+        <div class="accordion-content">
+          <p>Los estudiantes activos de la institución se comprometen a utilizar el sitio de manera responsable...</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">2. Propiedad Intelectual</div>
+        <div class="accordion-content">
+          <p>Todo el contenido disponible en Fuzzion, incluyendo logotipos, textos, gráficos, imágenes y software, está protegido...</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">3. Registro y Responsabilidad</div>
+        <div class="accordion-content">
+          <p>El estudiante es responsable de la veracidad de la información proporcionada al registrarse...</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">4. Modificaciones</div>
+        <div class="accordion-content">
+          <p>Fuzzion se reserva el derecho de modificar estos términos en cualquier momento...</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">5. Limitación de Responsabilidad</div>
+        <div class="accordion-content">
+          <p>No nos hacemos responsables de interrupciones, fallos técnicos o daños derivados del uso del sitio web.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">6. Contacto</div>
+        <div class="accordion-content">
+          <p>Si tienes alguna duda sobre estos términos, puedes comunicarte con nuestro equipo.</p>
+        </div>
+      </div>
+
+      <a href="index.html" class="btn-volver">← Volver al inicio</a>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Fuzzion. Todos los derechos reservados. · 
+        <a href="terminos_y_condiciones.html">Términos y Condiciones</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Script para acordeones
+    const headers = document.querySelectorAll('.accordion-header');
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        content.classList.toggle('open');
+      });
+    });
+
+    // Script para menú hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>

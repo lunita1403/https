@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre Nosotros | Tienda Escolar Fuzzion</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      min-height: 100vh;
+      background: url('images/banner.jpg') center/cover no-repeat fixed;
+      position: relative;
+    }
+
+    /* Fondo oscuro ligero */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.25);
+      z-index: -1;
+    }
+
+    /* NAVBAR */
+    nav {
+      background-color: #f6a06c;
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img { height: 120px; width: auto; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: #ffd54f; }
+
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle span {
+      height: 3px; width: 25px; background: white;
+      margin: 4px 0; border-radius: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #f6a06c;
+        position: absolute; top: 70px; right: 0;
+        width: 200px; text-align: right; padding: 1rem;
+      }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: flex; }
+    }
+
+    header {
+      background-color: rgba(255, 177, 124, 0.9);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2.5em;
+      color: #ff6600;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* Recuadro unificado para "¿Quiénes Somos?" */
+    .quienes-somos-box {
+      background: rgba(255,255,255,0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+      margin: 0 auto 40px;
+      max-width: 900px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: rgba(255,255,255,0.95);
+      padding: 25px;
+      border-radius: 15px;
+      width: 300px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    .team-member {
+      background-color: rgba(255,255,255,0.95);
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover { transform: translateY(-5px); }
+    .team-member img { object-fit: contain; margin-bottom: 15px; width: 80%; }
+    .team-member h4 { color: #ff6600; margin-bottom: 5px; }
+
+    footer {
+      background-color: #ff9900;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    .blue-shadow { box-shadow: 5px 5px 10px rgba(0, 187, 255, 0.4); }
+    .pink-shadow { box-shadow: 5px 5px 10px rgba(255, 0, 128, 0.4); }
+    .yellow-shadow { box-shadow: 5px 5px 10px rgba(255, 204, 0, 0.4); }
+    .green-shadow { box-shadow: 5px 5px 10px rgba(0, 200, 83, 0.4); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="images/logo.png" alt="Fuzzion Logo">
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="login.php">Registro</a>
+      <a href="comprar.php">Compra</a>
+      <a href="sobrenosotros.html">Sobre nosotros</a>
+      <a href="terminos_y_condiciones.html">Términos y condiciones</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <h1>Sobre Nosotros - Tienda Digital Fuzzion</h1>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="container">
+      <!-- 🔥 Unificado: Título + descripción en el mismo recuadro -->
+      <div class="quienes-somos-box">
+        <h2>¿Quiénes Somos?</h2>
+        <p>
+          Somos <strong>Fuzzion Digital</strong>, una tienda escolar en línea diseñada especialmente para que los estudiantes puedan hacer sus pedidos de forma fácil, rápida y desde cualquier lugar. Nuestro objetivo es digitalizar la experiencia de compra dentro del colegio y facilitar el acceso a productos escolares y snacks.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card blue-shadow">
+          <h3>Misión</h3>
+          <p>
+            Desarrollar una plataforma web innovadora y funcional que permita mejorar la eficiencia de la tienda escolar mediante el control automatizado del inventario, reducción de tiempos de espera y optimización de los procesos de compra.
+          </p>
+        </div>
+
+        <div class="card pink-shadow">
+          <h3>Visión</h3>
+          <p>
+            Ser un referente de solución tecnológica escolar, destacándonos por la funcionalidad, simplicidad y eficiencia de nuestra plataforma, con el propósito de ampliar su implementación en otras instituciones educativas.
+          </p>
+        </div>
+      </div>
+
+      <h3>Nuestro Equipo</h3>
+      <div class="cards">
+        <div class="team-member yellow-shadow">
+          <img src="images/juliana.png" alt="Juliana Quiñones" />
+          <h4>Juliana Quiñones</h4>
+        </div>
+        <div class="team-member green-shadow">
+          <img src="images/jhoana.png" alt="Jhoana Suarez" />
+          <h4>Jhoana Suarez</h4>
+        </div>
+        <div class="team-member blue-shadow">
+          <img src="images/melany.png" alt="Melany Martinez" />
+          <h4>Melany Martinez</h4>
+        </div>
+        <div class="team-member pink-shadow">
+          <img src="images/luna.png" alt="Luna Salgado" />
+          <h4>Luna Salgado</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Tienda Escolar Fuzzion. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
+
